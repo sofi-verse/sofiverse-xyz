@@ -10,7 +10,9 @@ const links = [
 
 <header class="nav-wrapper">
   <nav class="nav" id="nav">
-    <a href="/" class="nav__logo">sofiverse</a>
+    <a href="/" class="nav__logo" aria-label="sofiverse home">
+      <img src="/logo-sofiverse.svg" alt="sofiverse" width="79" height="16" />
+    </a>
 
     <ul class="nav__links" role="list">
       {links.map(({ href, label }) => (
@@ -95,11 +97,17 @@ const links = [
   }
 
   .nav__logo {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
     justify-self: start;
     text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .nav__logo img {
+    display: block;
+    height: 16px;
+    width: auto;
   }
 
   .nav__links {
