@@ -1,0 +1,352 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const colors = [
+  { name: 'bg-primary',     hex: '#08080B', var: '--color-bg-primary',     swatch: '#08080B', border: true },
+  { name: 'text-primary',   hex: '#FAFAFA', var: '--color-text-primary',   swatch: '#FAFAFA' },
+  { name: 'text-secondary', hex: '#949393', var: '--color-text-secondary', swatch: '#949393' },
+  { name: 'bg-secondary',   hex: '#222222', var: '--color-bg-secondary',   swatch: '#222222' },
+  { name: 'text-ghost',     hex: '#757575', var: '--color-text-ghost',     swatch: '#757575' },
+  { name: 'bg-ghost',       hex: '#0E0E0E', var: '--color-bg-ghost',       swatch: '#0E0E0E', border: true },
+];
+---
+
+<BaseLayout title="Design System — sofiverse">
+  <main>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- COLORS                                       -->
+    <!-- ──────────────────────────────────────────── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">COLORS</h2>
+      <div class="color-grid">
+        {colors.map(c => (
+          <div class="color-row">
+            <div
+              class="color-swatch"
+              style={`background:${c.swatch}; ${c.border ? 'border:1px solid #333;' : ''}`}
+            />
+            <div class="color-info">
+              <span class="color-name">{c.name}</span>
+              <span class="color-hex">{c.hex}</span>
+              <code class="color-var">{c.var}</code>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- TYPOGRAPHY                                   -->
+    <!-- ──────────────────────────────────────────── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">TYPOGRAPHY</h2>
+      <div class="type-stack">
+
+        <div class="type-row">
+          <span class="type-label">H1</span>
+          <p class="type-h1">Space Grotesk, Regular, 80px</p>
+          <code class="type-spec">Space Grotesk · Regular · 80px · #FAFAFA · .type-h1</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H1 Detail</span>
+          <p class="type-h1-detail">Playfair Display, Italic, 80px</p>
+          <code class="type-spec">Playfair Display · Italic · 80px · #757575 · .type-h1-detail</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H2</span>
+          <p class="type-h2">Space Grotesk, Regular, 64px</p>
+          <code class="type-spec">Space Grotesk · Regular · 64px · #FAFAFA · .type-h2</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H3</span>
+          <p class="type-h3">Space Grotesk, Regular, 32px</p>
+          <code class="type-spec">Space Grotesk · Regular · 32px · uppercase · #FAFAFA · .type-h3</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H4</span>
+          <p class="type-h4">Space Grotesk, Regular, 24px</p>
+          <code class="type-spec">Space Grotesk · Regular · 24px · #FAFAFA · .type-h4</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Body</span>
+          <p class="type-body">Space Grotesk, Regular, 16px — used for paragraph and description text throughout the site.</p>
+          <code class="type-spec">Space Grotesk · Regular · 16px · #949393 · .type-body</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Tag</span>
+          <p class="type-tag">Space Grotesk, Regular, 16px</p>
+          <code class="type-spec">Space Grotesk · Regular · 16px · uppercase · #757575 · .type-tag</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Link</span>
+          <a href="#" class="type-link">Space Grotesk, Regular, 12px</a>
+          <code class="type-spec">Space Grotesk · Regular · 12px · #FAFAFA · .type-link</code>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Small</span>
+          <p class="type-small">Space Grotesk, Regular, 12px</p>
+          <code class="type-spec">Space Grotesk · Regular · 12px · uppercase · #FAFAFA · .type-small</code>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- COMPONENTS                                   -->
+    <!-- ──────────────────────────────────────────── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">COMPONENTS</h2>
+
+      <!-- Buttons -->
+      <div class="ds-subsection">
+        <span class="ds-label">Buttons</span>
+        <div class="ds-row">
+          <button class="btn">contact</button>
+          <button class="btn btn--hover-preview">contact (hover)</button>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="ds-subsection">
+        <span class="ds-label">Tags</span>
+        <div class="ds-row">
+          <span class="tag">content</span>
+          <span class="tag">design</span>
+          <span class="tag">product</span>
+        </div>
+      </div>
+
+      <!-- Nav – default -->
+      <div class="ds-subsection">
+        <span class="ds-label">Nav — default</span>
+        <nav class="nav">
+          <span class="nav__logo">sofiverse</span>
+          <ul class="nav__links">
+            <li><a href="#">about me</a></li>
+            <li><a href="#">projects</a></li>
+            <li><a href="#">how we work</a></li>
+          </ul>
+          <button class="btn">contact</button>
+        </nav>
+      </div>
+
+      <!-- Nav – active state -->
+      <div class="ds-subsection">
+        <span class="ds-label">Nav — active link</span>
+        <nav class="nav">
+          <span class="nav__logo">sofiverse</span>
+          <ul class="nav__links">
+            <li><a href="#" data-active>about me</a></li>
+            <li><a href="#">projects</a></li>
+            <li><a href="#">how we work</a></li>
+          </ul>
+          <button class="btn">contact</button>
+        </nav>
+      </div>
+
+      <!-- Footer -->
+      <div class="ds-subsection">
+        <span class="ds-label">Footer</span>
+        <footer class="footer">
+          <p class="footer__tagline">made with love in a little corner of mexico &lt;3</p>
+          <ul class="footer__links">
+            <li><a href="#">X/Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Github</a></li>
+          </ul>
+          <button class="btn">back to top</button>
+        </footer>
+      </div>
+
+      <!-- Card – large -->
+      <div class="ds-subsection">
+        <span class="ds-label">Project card — large (image left)</span>
+        <article class="card-large">
+          <div class="card-large__image" style="background:#00E676; display:flex; align-items:center; justify-content:center;">
+            <span style="font-size:1.5rem; font-weight:600; color:#000;">Project Image</span>
+          </div>
+          <div class="card-large__content">
+            <div class="card-large__meta">
+              <span class="tag">content</span>
+              <span class="tag">design</span>
+              <span class="card-large__year">2026</span>
+            </div>
+            <h3 class="card-large__title">Edge Network</h3>
+            <p class="card-large__description">
+              Brand, content, and community design for Edge Network, a decentralised cloud
+              infrastructure project: graphic design and visual identity, community campaigns,
+              branded merchandise, and a weekly Discord recap built to keep community engaged
+              and aligned on direction and progress.
+            </p>
+            <a href="#" class="card-large__link">view full project →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card – small -->
+      <div class="ds-subsection">
+        <span class="ds-label">Project card — small (image top)</span>
+        <div style="max-width:420px;">
+          <article class="card-small">
+            <div class="card-small__image" style="background:#FF3CAC; display:flex; align-items:center; justify-content:center;">
+              <span style="font-size:1.5rem; font-weight:600; color:#fff;">Project Image</span>
+            </div>
+            <div class="card-small__content">
+              <div class="card-small__meta">
+                <span class="tag">product</span>
+                <span class="tag">design</span>
+                <span class="card-small__year">2026</span>
+              </div>
+              <h3 class="card-small__title">Swarm</h3>
+              <p class="card-small__description">
+                AI fleet orchestration platform by Perk OS. Real-time communication, task
+                boards and agent management. Full desktop and mobile design.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  .ds-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .ds-section-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-primary);
+    padding-bottom: var(--space-4);
+    border-bottom: var(--border-subtle);
+  }
+
+  /* ── Colors ── */
+  .color-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .color-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .color-swatch {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .color-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .color-name {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-primary);
+  }
+
+  .color-hex {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-ghost);
+  }
+
+  .color-var {
+    font-size: 0.75rem;
+    color: var(--color-text-ghost);
+    font-family: monospace;
+  }
+
+  /* ── Typography ── */
+  .type-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .type-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-bottom: var(--space-6);
+    border-bottom: var(--border-subtle);
+  }
+
+  .type-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-ghost);
+  }
+
+  .type-spec {
+    font-size: 0.7rem;
+    color: var(--color-text-ghost);
+    font-family: monospace;
+    margin-top: var(--space-1);
+  }
+
+  /* ── Components ── */
+  .ds-subsection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding-bottom: var(--space-8);
+    border-bottom: var(--border-subtle);
+  }
+
+  .ds-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-ghost);
+  }
+
+  .ds-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  /* Show hover state statically for preview */
+  .btn--hover-preview {
+    border-color: var(--color-text-primary);
+  }
+</style>
