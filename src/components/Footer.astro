@@ -1,0 +1,100 @@
+---
+const socials = [
+  { href: 'https://x.com/',        label: 'X/Twitter' },
+  { href: 'https://linkedin.com/', label: 'LinkedIn'  },
+  { href: 'https://github.com/',   label: 'Github'    },
+];
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__tagline">made with love in a little<br />corner of mexico &lt;3</p>
+
+    <ul class="footer__links" role="list">
+      {socials.map(({ href, label }) => (
+        <li><a href={href} target="_blank" rel="noopener noreferrer">{label}</a></li>
+      ))}
+    </ul>
+
+    <button class="btn footer__top" id="back-to-top">back to top</button>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('back-to-top')!.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<style>
+  .footer {
+    border-top: var(--border-subtle);
+    background: var(--color-bg-primary);
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 60px;
+    padding: 0 var(--space-8);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer__tagline {
+    font-family: var(--font-sans);
+    font-size: var(--text-small);
+    line-height: 1.4;
+    color: var(--color-text-ghost);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    justify-self: start;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-8);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__links a {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer__links a:hover {
+    color: var(--color-text-secondary);
+  }
+
+  .footer__top {
+    justify-self: end;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 767px) {
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      gap: var(--space-6);
+      padding: var(--space-8);
+      text-align: center;
+    }
+
+    .footer__tagline {
+      font-size: 0.65rem;
+    }
+
+    .footer__links {
+      gap: var(--space-6);
+    }
+  }
+</style>

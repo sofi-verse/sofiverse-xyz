@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 const colors = [
   { name: 'bg-primary',     hex: '#08080B', var: '--color-bg-primary',     swatch: '#08080B', border: true },
@@ -125,46 +127,20 @@ const colors = [
         </div>
       </div>
 
-      <!-- Nav – default -->
+      <!-- Nav preview -->
       <div class="ds-subsection">
-        <span class="ds-label">Nav — default</span>
-        <nav class="nav">
-          <span class="nav__logo">sofiverse</span>
-          <ul class="nav__links">
-            <li><a href="#">about me</a></li>
-            <li><a href="#">projects</a></li>
-            <li><a href="#">how we work</a></li>
-          </ul>
-          <button class="btn">contact</button>
-        </nav>
+        <span class="ds-label">Nav (live component — active link detection based on current path)</span>
+        <div class="ds-preview-frame">
+          <Nav />
+        </div>
       </div>
 
-      <!-- Nav – active state -->
+      <!-- Footer preview -->
       <div class="ds-subsection">
-        <span class="ds-label">Nav — active link</span>
-        <nav class="nav">
-          <span class="nav__logo">sofiverse</span>
-          <ul class="nav__links">
-            <li><a href="#" data-active>about me</a></li>
-            <li><a href="#">projects</a></li>
-            <li><a href="#">how we work</a></li>
-          </ul>
-          <button class="btn">contact</button>
-        </nav>
-      </div>
-
-      <!-- Footer -->
-      <div class="ds-subsection">
-        <span class="ds-label">Footer</span>
-        <footer class="footer">
-          <p class="footer__tagline">made with love in a little corner of mexico &lt;3</p>
-          <ul class="footer__links">
-            <li><a href="#">X/Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Github</a></li>
-          </ul>
-          <button class="btn">back to top</button>
-        </footer>
+        <span class="ds-label">Footer (live component)</span>
+        <div class="ds-preview-frame">
+          <Footer />
+        </div>
       </div>
 
       <!-- Card – large -->
@@ -348,5 +324,17 @@ const colors = [
   /* Show hover state statically for preview */
   .btn--hover-preview {
     border-color: var(--color-text-primary);
+  }
+
+  /* Wrap live components so sticky/fixed don't escape the box */
+  .ds-preview-frame {
+    border: var(--border-subtle);
+    overflow: hidden;
+    /* neutralise sticky inside the frame */
+    position: relative;
+  }
+
+  .ds-preview-frame :global(.nav-wrapper) {
+    position: relative;
   }
 </style>
