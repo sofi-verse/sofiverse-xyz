@@ -1,0 +1,59 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Redesigned user flows for budgets and grantees, making voting power and funding allocations visible at every step.',
+  'Co-built new identity system covering the core flows: voting, council creation, user permissions, and fund distribution.',
+  'Built the full design system including typography, spacing, colours, and components.',
+  'Worked directly with the dev team and the Superfluid team to iterate and deliver at pace.',
+  'Delivered the final Figma prototypes ready for handoff.',
+];
+---
+
+<ProjectLayout
+  title="CouncilHaus"
+  description="Full branding, design system, and ongoing UX for CouncilHaus, a participatory budgeting dApp for DAOs. Built with Blossom Labs."
+  tags={['product', 'design']}
+  meta={[
+    { label: 'Role',   value: 'UX/UI Designer'  },
+    { label: 'Client', value: 'Blossom Labs'    },
+    { label: 'Year',   value: '2024'            },
+  ]}
+  heroImage="/img-council-01.jpg"
+  images={[
+    '/img-council-02.jpg',
+    '/img-council-03.jpg',
+    '/img-council-04.jpg',
+  ]}
+  linkLabel="view app"
+  linkHref="https://council.haus"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>CouncilHaus is a participatory budgeting dApp for DAOs and web3 organisations — a platform with a widget to distribute funds to contributors and projects efficiently, through dynamic voting that keeps allocation fair and transparent. Built with Blossom Labs and powered by Superfluid's continuous token streaming, CouncilHaus lets communities direct resources in real time without relying on fixed donation thresholds or manual payouts.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>CouncilHaus was technically ambitious but the UX hadn't kept up with the product's depth. The platform manages budgets, voting power, council creation, and real-time streaming payouts — all in one interface. The challenge was making those flows feel intuitive to DAO participants who weren't necessarily technical, while giving power users enough control without overwhelming the default experience. Features were also being added rapidly, which made maintaining design coherence a constant pressure.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>CouncilHaus is still in active use by the Superfluid Frontier Guild and aligned DAOs. Across multiple rounds, the platform has facilitated the distribution of hundreds of thousands of dollars to contributors — with voting participation rates and allocation transparency that set it apart from simpler grant tools. The design system I delivered has supported the team in shipping new features independently while keeping the product visually consistent.</p>
+  </section>
+
+</ProjectLayout>
