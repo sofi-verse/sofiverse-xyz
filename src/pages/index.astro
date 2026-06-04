@@ -81,20 +81,22 @@ const projects = [
       <ul class="work__list" role="list">
         {projects.map(({ image, tags, year, title, description, href }) => (
           <li class="project-card">
-            <div class="project-card__image">
-              <img src={image} alt={title} loading="lazy" />
-            </div>
-            <div class="project-card__content">
-              <div class="project-card__meta">
-                <div class="project-card__tags">
-                  {tags.map(t => <span class="tag">{t}</span>)}
-                </div>
-                <span class="project-card__year">{year}</span>
+            <a href={href} class="project-card__inner">
+              <div class="project-card__image">
+                <img src={image} alt={title} loading="lazy" />
               </div>
-              <h3 class="project-card__title">{title}</h3>
-              <p class="project-card__desc">{description}</p>
-              <a href={href} class="project-card__link">view full project →</a>
-            </div>
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <div class="project-card__tags">
+                    {tags.map(t => <span class="tag">{t}</span>)}
+                  </div>
+                  <span class="project-card__year">{year}</span>
+                </div>
+                <h3 class="project-card__title">{title}</h3>
+                <p class="project-card__desc">{description}</p>
+                <span class="project-card__link">view full project →</span>
+              </div>
+            </a>
           </li>
         ))}
       </ul>
@@ -261,6 +263,12 @@ const projects = [
   }
 
   /* ── Project card ── */
+  .project-card__inner {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
   .project-card {
     display: grid;
     grid-template-columns: 55fr 45fr;
