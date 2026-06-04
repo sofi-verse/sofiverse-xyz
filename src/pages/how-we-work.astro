@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    icon: '/icon-embedded.svg',
+    title: 'Embedded',
+    body: 'For teams that need a design + content brain in the room for a quarter. Usually around a launch, rebrand, product overhaul or funding round. I show up to your syncs, write the words, design the surfaces, and help your team get sharper at explaining what they\'re building. Best for early-stage teams without a marketing or design hire yet.',
+  },
+  {
+    icon: '/icon-project-based.svg',
+    title: 'Project based',
+    body: 'For specific scopes with clear edges: landing pages, messaging frameworks, content systems, pitch decks that don\'t put investors to sleep, case studies, documentation rewrites.',
+    note: 'Defined timeline, defined deliverables.',
+  },
+  {
+    icon: '/icon-one-off.svg',
+    title: 'One-off',
+    body: 'For the smaller stuff: content audits, copy reviews, half-day workshops with your team, or the occasional "please rewrite this before tomorrow\'s pitch".',
+  },
+];
+
+const faqs = [
+  {
+    question: "Who I'm usually a fit for",
+    answer: "Technical teams in web3, security, or dev tools who know they need help making their work legible to people outside the repo. Most of my clients are founders, marketing leads, or design leads who are tired of being the bottleneck for everything that needs words.",
+  },
+  {
+    question: "Who I'm not a fit for",
+    answer: 'Pure visual brand work without context. Logos in a vacuum. "Make this pretty" without "make this make sense". I do brand work, but always with words and strategy attached.',
+  },
+  {
+    question: 'How it starts',
+    list: [
+      '30-min intro call. You tell me what you\'re building and where the friction is. I tell you if I\'m the right fit.',
+      'Proposal within 2 days. Scope, timeline, price.',
+      'Kick off. Usually within 1 week of the proposal.',
+    ],
+  },
+  {
+    question: 'On pricing',
+    answer: "Project-dependent. Tell me what you have and what you need; I'll tell you honestly if it's feasible. I'd rather refer you to someone else than take a project that won't work for either of us.",
+  },
+];
+---
+
+<BaseLayout title="How We Work" description="Three modes of working together, depending on what you need.">
+
+  <section class="how">
+    <div class="container">
+
+      <a href="/" class="back-link">← go back to home</a>
+
+      <div class="how__header">
+        <h1 class="how__title">How We Work</h1>
+        <p class="how__subtitle">Three modes of working together, depending on what you need.</p>
+      </div>
+
+      <!-- ── Service cards ── -->
+      <div class="services">
+        {services.map(({ icon, title, body, note }) => (
+          <div class="service-card">
+            <img src={icon} alt="" class="service-card__icon" aria-hidden="true" width="32" height="32" />
+            <h2 class="service-card__title">{title}</h2>
+            <p class="service-card__body">{body}</p>
+            {note && <p class="service-card__note">{note}</p>}
+          </div>
+        ))}
+      </div>
+
+      <!-- ── Accordion ── -->
+      <div class="accordion">
+        {faqs.map(({ question, answer, list }) => (
+          <details class="accordion__item" open>
+            <summary class="accordion__summary">
+              <span>{question}</span>
+              <svg class="accordion__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 10L8 5L13 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="accordion__body">
+              {answer && <p>{answer}</p>}
+              {list && (
+                <ol>
+                  {list.map((item, i) => <li>{i + 1}. {item}</li>)}
+                </ol>
+              )}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <!-- ── CTA ── -->
+      <div class="how__cta">
+        <p class="how__cta-label">Sound like a fit? →</p>
+        <a href="mailto:vcsofi.web3@gmail.com" class="how__cta-email">vcsofi.web3@gmail.com</a>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .how {
+    padding-block: var(--space-8) var(--space-24);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: var(--space-8);
+  }
+
+  /* ── Back link ── */
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: var(--text-link);
+    color: var(--color-text-ghost);
+    text-decoration: none;
+    margin-bottom: var(--space-8);
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* ── Header ── */
+  .how__header {
+    margin-bottom: var(--space-12);
+  }
+
+  .how__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .how__subtitle {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    line-height: 1;
+    margin: 0;
+  }
+
+  /* ── Service cards ── */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: var(--space-16);
+  }
+
+  .service-card {
+    border: var(--border-subtle);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .service-card + .service-card {
+    border-left: none;
+  }
+
+  .service-card__icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .service-card__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h4);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-text-primary);
+  }
+
+  .service-card__body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    line-height: 1;
+    margin: 0;
+    flex: 1;
+  }
+
+  .service-card__note {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    line-height: 1;
+    margin: 0;
+  }
+
+  /* ── Accordion ── */
+  .accordion {
+    margin-bottom: var(--space-24);
+  }
+
+  .accordion__item {
+    border-top: var(--border-subtle);
+  }
+
+  .accordion__item:last-child {
+    border-bottom: var(--border-subtle);
+  }
+
+  /* Remove native details marker */
+  .accordion__item summary {
+    list-style: none;
+  }
+
+  .accordion__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-6);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: var(--text-h4);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    user-select: none;
+    gap: var(--space-4);
+  }
+
+  .accordion__summary:hover {
+    color: var(--color-text-secondary);
+  }
+
+  .accordion__chevron {
+    flex-shrink: 0;
+    color: var(--color-text-primary);
+    transition: transform 0.2s ease;
+  }
+
+  /* Rotate chevron when closed */
+  .accordion__item:not([open]) .accordion__chevron {
+    transform: rotate(180deg);
+  }
+
+  .accordion__body {
+    padding-bottom: var(--space-8);
+  }
+
+  .accordion__body p,
+  .accordion__body li {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    line-height: 1;
+    margin: 0;
+  }
+
+  .accordion__body ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  /* ── CTA ── */
+  .how__cta {
+    text-align: center;
+    padding-block: var(--space-16);
+  }
+
+  .how__cta-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-4);
+    line-height: 1;
+  }
+
+  .how__cta-email {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, var(--text-h1));
+    font-weight: 400;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    line-height: 1;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+    display: inline-block;
+  }
+
+  .how__cta-email:hover {
+    border-bottom-color: var(--color-text-primary);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .services {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card + .service-card {
+      border-left: var(--border-subtle);
+      border-top: none;
+    }
+
+    .how__title {
+      font-size: var(--text-h4);
+    }
+  }
+</style>
