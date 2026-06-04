@@ -263,16 +263,15 @@ const projects = [
   }
 
   /* ── Project card ── */
-  .project-card__inner {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+  .project-card {
+    border: var(--border-subtle);
   }
 
-  .project-card {
+  .project-card__inner {
     display: grid;
     grid-template-columns: 55fr 45fr;
-    border: var(--border-subtle);
+    text-decoration: none;
+    color: inherit;
   }
 
   .project-card__image {
@@ -288,7 +287,7 @@ const projects = [
     transition: transform 0.4s ease;
   }
 
-  .project-card:hover .project-card__image img {
+  .project-card__inner:hover .project-card__image img {
     transform: scale(1.02);
   }
 
@@ -411,7 +410,7 @@ const projects = [
       font-size: clamp(2.5rem, 8vw, var(--text-h1));
     }
 
-    .project-card {
+    .project-card__inner {
       grid-template-columns: 1fr;
     }
 
