@@ -1,0 +1,61 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Studied the Dev Guild\'s tools and initiatives to understand the broader impact goals behind each project.',
+  'Mapped the Guild\'s existing ecosystem to stay close to its language, context, and meaning.',
+  'Visualised each project and framework individually, abstracting each story\'s key information into a unified visual language.',
+  'Designed visual metaphors and iconography that made complex onchain concepts easy to grasp.',
+  'Produced each infographic to work both as a standalone piece and as part of the larger series narrative.',
+];
+---
+
+<ProjectLayout
+  title="Regenerative Stack"
+  description="Infographics series explaining the Greenpill Dev Guild's work, products, and ecosystem impact across the regenerative ecosystem."
+  tags={['design']}
+  meta={[
+    { label: 'Role',   value: 'Graphic Designer'    },
+    { label: 'Client', value: 'Greenpill Dev Guild' },
+    { label: 'Year',   value: '2025'                },
+  ]}
+  heroImage="/img-gpdg-01.jpg"
+  images={[
+    '/img-gpdg-02.jpg',
+    '/img-gpdg-03.jpg',
+    '/img-gpdg-04.jpg',
+    '/img-gpdg-05.jpg',
+    '/img-gpdg-06.jpg',
+  ]}
+  linkLabel="view full series"
+  linkHref="https://greenpill.network/stories/dev-guild-regenerative-stack/"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Greenpill Dev Guild is a community of regenerative developers building open-source tools for the Greenpill Network and aligned communities worldwide. Their work spans impact measurement, capital allocation, and community coordination — including projects like Green Goods, Allo Protocol, and the Public Good Staging Protocol. Part of my work with the Guild was making that ecosystem legible to a broader audience.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Since 2022, the Greenpill Dev Guild has been building steadily toward a more regenerative onchain economy. But their work spans dozens of projects, protocols, and contributors — and it had never been explained as a coherent whole. The challenge was creating visuals that could hold the full complexity of the Guild's stack without losing the people who weren't already deep in the ecosystem.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>Nine infographics covering the major sections of the Regenerative Stack — from the Guild's tooling and roadmap to ecosystem maps and impact frameworks. The series spread widely across the Greenpill network, shared alongside grant proposals and community updates. It has since been used to onboard new contributors and is regularly cited in the Guild's storytelling and fundraising efforts.</p>
+  </section>
+
+</ProjectLayout>
