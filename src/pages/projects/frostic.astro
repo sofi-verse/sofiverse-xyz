@@ -1,0 +1,65 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Produced social media graphics and campaign visuals aligned with Frostic\'s playful brand system.',
+  'Designed promotional materials for different activations including token launches, event attendance, and leaderboard announcements.',
+  'Created visuals for Telegram-native gamified experiences and community challenges.',
+  'Contributed to the visual identity consistency across all public-facing channels.',
+  'Developed a library of reusable assets that the team could adapt independently.',
+];
+---
+
+<ProjectLayout
+  title="Frostic"
+  description="Graphic design for Frostic, an AI digital twin platform for character IP. Social media visuals and gamified Telegram experiences."
+  tags={['content', 'design', 'comms']}
+  meta={[
+    { label: 'Role',   value: 'Graphic Designer' },
+    { label: 'Client', value: 'Frostic'          },
+    { label: 'Year',   value: '2025'             },
+  ]}
+  heroImage="/img-frostic-01.jpg"
+  images={[
+    '/img-frostic-02.jpg',
+    '/img-frostic-03.jpg',
+    '/img-frostic-04.jpg',
+    '/img-frostic-05.jpg',
+    '/img-frostic-06.jpg',
+    '/img-frostic-07.jpg',
+    '/img-frostic-08.jpg',
+    '/img-frostic-09.jpg',
+    '/img-frostic-10.jpg',
+  ]}
+  linkLabel="view twitter profile"
+  linkHref="https://x.com/frosticxyz"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Frostic is an AI digital twin platform built around character IP — a world of collectible characters with on-chain identities, gamified social experiences, and a native utility token ($FROST). The project lives at the intersection of AI, gaming, and crypto, with a community built primarily around Telegram and X. I worked with their team to produce the visual content that brought the brand to life across every channel they operated.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Frostic had a strong concept and a distinctive visual world, but producing content consistently at the pace the community expected was a challenge. Announcements, game updates, token launches, leaderboard reveals — everything needed to look polished and on-brand, fast. The team needed a design partner who could absorb the brand language quickly and deliver at speed without losing quality or coherence.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>A consistent visual presence across Frostic's most active growth period — covering token launches, EthCC activation, community leaderboards, and the rollout of live character features. The design system I built into reusable templates let the team keep the momentum going independently after our engagement, without losing the visual quality the community had come to expect.</p>
+  </section>
+
+</ProjectLayout>
