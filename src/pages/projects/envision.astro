@@ -1,0 +1,64 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Produced social media graphics for product announcements, milestones, and community updates.',
+  'Created Jitter-based motion graphics to bring static assets to life for social and Telegram.',
+  'Designed visuals for integrations, AI agent launches, and contest activations.',
+  'Maintained visual consistency across channels while adapting content to each platform\'s format.',
+];
+---
+
+<ProjectLayout
+  title="Envision Labs"
+  description="Social media design, content, and Jitter-based motion graphics."
+  tags={['content', 'design']}
+  meta={[
+    { label: 'Role',   value: 'Content Designer' },
+    { label: 'Client', value: 'Envision Labs'    },
+    { label: 'Year',   value: '2024'             },
+  ]}
+  heroImage="/img-envision-01.jpg"
+  images={[
+    '/img-envision-02.jpg',
+    '/img-envision-03.jpg',
+    '/img-envision-04.jpg',
+    '/img-envision-05.jpg',
+    '/img-envision-06.jpg',
+    '/img-envision-07.jpg',
+    '/img-envision-08.jpg',
+    '/img-envision-09.jpg',
+    '/img-envision-10.jpg',
+  ]}
+  linkLabel="view twitter profile"
+  linkHref="https://x.com/envisionlabs_io"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Envision Labs is an AI-powered image generation platform — one of the early players in generative AI for web3 communities. The product lets users generate custom visuals on-chain, run AI art contests, and interact with AI agents through Telegram. I joined their team to handle content design and motion graphics during a high-growth period where they were shipping new features and integrations rapidly.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Envision was moving fast — 150,000 images generated since launch, new AI agents going live, integrations with platforms like Boomer dropping regularly. The challenge was producing content that kept pace with the product without becoming repetitive or losing the visual quality that had defined the brand. Every announcement needed to feel like an event.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>Visual content that matched the pace and energy of a fast-shipping AI product. Motion graphics added dimension to announcements that would otherwise have been static, and the design system kept everything looking coherent even when new features dropped week after week. The content helped Envision maintain an active, engaged community through one of their most prolific development periods.</p>
+  </section>
+
+</ProjectLayout>
