@@ -45,7 +45,6 @@ const projects = [
 
   <!-- ── Hero ────────────────────────────────────── -->
   <section class="hero">
-    <div class="hero__grid-bg" aria-hidden="true"></div>
     <div class="container">
       <h1 class="hero__heading">
         I turn <em>complex<br />tech</em> into clear<br />product.
@@ -60,7 +59,7 @@ const projects = [
   <!-- ── Logos ────────────────────────────────────── -->
   <section class="logos" aria-label="Teams I've worked with">
     <div class="logos__inner container">
-      <span class="logos__label">Teams I've<br />worked with</span>
+      <span class="logos__label">Teams I've worked with</span>
       <ul class="logos__list" role="list">
         {logos.map(({ src, alt }) => (
           <li class="logos__item">
@@ -136,32 +135,21 @@ const projects = [
     align-items: center;
     padding-block: var(--space-24);
     overflow: hidden;
-  }
-
-  .hero__grid-bg {
-    position: absolute;
-    inset: 0;
     background-image: url('/bg-grid.png');
     background-repeat: repeat;
     background-size: auto;
-    background-position: top right;
-    /* fade out to the left so text stays readable */
-    mask-image: linear-gradient(to left, rgba(0,0,0,0.25) 0%, transparent 65%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.25) 0%, transparent 65%);
-    pointer-events: none;
   }
 
   .hero .container {
     position: relative;
     z-index: 1;
-    max-width: 900px;
   }
 
   .hero__heading {
     font-family: var(--font-sans);
     font-size: var(--text-h1);
     font-weight: 400;
-    line-height: 1.05;
+    line-height: 1;
     color: var(--color-text-primary);
     margin-bottom: var(--space-8);
   }
@@ -176,7 +164,7 @@ const projects = [
     font-family: var(--font-sans);
     font-size: var(--text-body);
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1;
     max-width: 46ch;
   }
 
@@ -189,9 +177,11 @@ const projects = [
 
   .logos__inner {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: var(--space-8);
-    padding-block: var(--space-6);
+    padding-block: var(--space-8);
   }
 
   .logos__label {
@@ -261,23 +251,19 @@ const projects = [
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: var(--space-12);
   }
 
   /* ── Project card ── */
   .project-card {
     display: grid;
     grid-template-columns: 55fr 45fr;
-    border-top: var(--border-subtle);
-  }
-
-  .project-card:last-child {
-    border-bottom: var(--border-subtle);
+    border: var(--border-subtle);
   }
 
   .project-card__image {
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 711 / 400;
   }
 
   .project-card__image img {
@@ -293,11 +279,13 @@ const projects = [
   }
 
   .project-card__content {
-    padding: var(--space-8);
+    padding: var(--space-8) var(--space-8) 40px;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
     border-left: var(--border-subtle);
+    overflow: hidden;
+    min-height: 0;
   }
 
   .project-card__meta {
@@ -323,7 +311,7 @@ const projects = [
 
   .project-card__title {
     font-family: var(--font-sans);
-    font-size: var(--text-h2);
+    font-size: var(--text-h4);
     font-weight: 400;
     line-height: 1.1;
     color: var(--color-text-primary);
@@ -333,8 +321,7 @@ const projects = [
     font-family: var(--font-sans);
     font-size: var(--text-body);
     color: var(--color-text-secondary);
-    line-height: 1.6;
-    flex: 1;
+    line-height: 1;
   }
 
   .project-card__link {
@@ -349,6 +336,7 @@ const projects = [
     border-bottom: 1px solid transparent;
     padding-bottom: 1px;
     transition: border-color 0.2s;
+    margin-top: auto;
   }
 
   .project-card__link:hover {
@@ -360,17 +348,16 @@ const projects = [
   /* ───────────────────────────────────────────── */
   .cta {
     padding-block: var(--space-24);
-    border-top: var(--border-subtle);
   }
 
   .cta__heading {
     font-family: var(--font-sans);
-    font-size: var(--text-h1);
+    font-size: var(--text-h2);
     font-weight: 400;
     line-height: 1.1;
     color: var(--color-text-primary);
     margin-bottom: var(--space-8);
-    max-width: 18ch;
+    max-width: 22ch;
   }
 
   .cta__body {
@@ -385,7 +372,7 @@ const projects = [
     font-family: var(--font-sans);
     font-size: var(--text-body);
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1;
   }
 
   .cta__email {
@@ -410,36 +397,29 @@ const projects = [
       font-size: clamp(2.5rem, 8vw, var(--text-h1));
     }
 
-    .cta__heading {
-      font-size: clamp(2rem, 7vw, var(--text-h1));
-    }
-
     .project-card {
       grid-template-columns: 1fr;
     }
 
     .project-card__image {
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 711 / 400;
     }
 
     .project-card__content {
       border-left: none;
       border-top: var(--border-subtle);
     }
-
-    .project-card__title {
-      font-size: var(--text-h3);
-    }
   }
 
   @media (max-width: 600px) {
     .logos__inner {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: var(--space-4);
     }
 
     .logos__list {
+      justify-content: center;
       gap: var(--space-6);
     }
 
