@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    image:       '/img-swarm-01.jpg',
+    tags:        ['product', 'design'],
+    year:        '2026',
+    title:       'Swarm',
+    description: 'AI fleet orchestration platform by Perk OS. Real-time communication, task boards and agent management. Full desktop and mobile design.',
+    href:        '/projects/swarm',
+  },
+  {
+    image:       '/img-edge-01.jpg',
+    tags:        ['content', 'design', 'comms'],
+    year:        '2026',
+    title:       'Edge Network',
+    description: 'Brand, content and design for a decentralized cloud infrastructure project. Visual identity, campaigns, merch and a weekly Discord recap.',
+    href:        '/projects/edge',
+  },
+  {
+    image:       '/img-gpdg-01.jpg',
+    tags:        ['design'],
+    year:        '2025',
+    title:       'Regenerative Stack',
+    description: 'Infographics series explaining the Greenpill Dev Guild\'s work, products, and ecosystem impact across the regenerative ecosystem.',
+    href:        '/projects/regenerative-stack',
+  },
+  {
+    image:       '/img-frutero-01.jpg',
+    tags:        ['design'],
+    year:        '2025',
+    title:       'Frutero Club',
+    description: 'Landing page design for a Mexican builder community. Visual and narrative direction built to channel local builder energy and grow the network.',
+    href:        '/projects/frutero',
+  },
+  {
+    image:       '/img-blockv-01.jpg',
+    tags:        ['content', 'design'],
+    year:        '2025',
+    title:       'BLOCKv',
+    description: 'Social media design, pitch deck, and editorial content for BLOCKv. Graphics, copy, and long-form writing across channels.',
+    href:        '/projects/blockv',
+  },
+  {
+    image:       '/img-frostic-01.jpg',
+    tags:        ['content', 'design', 'comms'],
+    year:        '2025',
+    title:       'Frostic',
+    description: 'Graphic design for Frostic, an AI digital twin platform for character IP. Social media visuals and gamified Telegram experiences.',
+    href:        '/projects/frostic',
+  },
+  {
+    image:       '/img-envision-01.jpg',
+    tags:        ['content', 'design'],
+    year:        '2024',
+    title:       'Envision Labs',
+    description: 'Social media design, content, and Jitter-based motion graphics.',
+    href:        '/projects/envision',
+  },
+  {
+    image:       '/img-council-01.jpg',
+    tags:        ['product', 'design'],
+    year:        '2024',
+    title:       'CouncilHaus',
+    description: 'Full branding, design system, and ongoing UX for CouncilHaus, a participatory budgeting dApp for DAOs. Built with Blossom Labs.',
+    href:        '/projects/councilhaus',
+  },
+  {
+    image:       '/img-obortech-01.jpg',
+    tags:        ['content', 'design'],
+    year:        '2024',
+    title:       'Obortech',
+    description: 'Social media design, pitch deck, and editorial content for Obortech. Graphics, copy, and long-form writing across channels.',
+    href:        '/projects/obortech',
+  },
+];
+
+const filters = ['product', 'design', 'content', 'comms'];
+---
+
+<BaseLayout title="Projects" description="All projects — sofiverse">
+
+  <section class="projects">
+    <div class="container">
+
+      <a href="/" class="back-link">← go back to home</a>
+
+      <!-- Header -->
+      <div class="projects__header">
+        <h1 class="projects__title">All Projects</h1>
+        <div class="projects__filters" role="group" aria-label="Filter by tag">
+          {filters.map(f => (
+            <button class="tag filter-btn" data-filter={f}>{f}</button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <ul class="projects__grid" role="list">
+        {projects.map(({ image, tags, year, title, description, href }) => (
+          <li class="pcard" data-tags={tags.join(',')}>
+            <a href={href} class="pcard__inner">
+              <div class="pcard__image">
+                <img src={image} alt={title} loading="lazy" />
+              </div>
+              <div class="pcard__content">
+                <div class="pcard__meta">
+                  <div class="pcard__tags">
+                    {tags.map(t => <span class="tag">{t}</span>)}
+                  </div>
+                  <span class="pcard__year">{year}</span>
+                </div>
+                <h2 class="pcard__title">{title}</h2>
+                <p class="pcard__desc">{description}</p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards   = document.querySelectorAll<HTMLLIElement>('.pcard');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isActive = btn.classList.contains('active');
+
+      // Deactivate all buttons first
+      buttons.forEach(b => b.classList.remove('active'));
+
+      if (!isActive) {
+        btn.classList.add('active');
+      }
+
+      const active = document.querySelector<HTMLButtonElement>('.filter-btn.active')?.dataset.filter;
+
+      cards.forEach(card => {
+        const tags = card.dataset.tags?.split(',') ?? [];
+        card.hidden = !!active && !tags.includes(active);
+      });
+    });
+  });
+</script>
+
+<style>
+  .projects {
+    padding-block: var(--space-8) var(--space-24);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: var(--space-8);
+  }
+
+  /* ── Back link ── */
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: var(--text-link);
+    color: var(--color-text-ghost);
+    text-decoration: none;
+    margin-bottom: var(--space-8);
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* ── Header ── */
+  .projects__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+    flex-wrap: wrap;
+  }
+
+  .projects__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--color-text-primary);
+  }
+
+  .projects__filters {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    cursor: pointer;
+    background: var(--color-bg-secondary);
+    border: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .filter-btn.active {
+    border-color: var(--color-text-ghost);
+    color: var(--color-text-primary);
+  }
+
+  .filter-btn:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* ── Grid ── */
+  .projects__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  /* ── Card ── */
+  .pcard {
+    border: var(--border-subtle);
+  }
+
+  .pcard[hidden] {
+    display: none;
+  }
+
+  .pcard__inner {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .pcard__image {
+    aspect-ratio: 45 / 22;
+    overflow: hidden;
+  }
+
+  .pcard__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .pcard:hover .pcard__image img {
+    transform: scale(1.02);
+  }
+
+  .pcard__content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    border-top: var(--border-subtle);
+  }
+
+  .pcard__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .pcard__tags {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .pcard__year {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-ghost);
+    white-space: nowrap;
+  }
+
+  .pcard__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h4);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-text-primary);
+  }
+
+  .pcard__desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .projects__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .projects__title {
+      font-size: var(--text-h4);
+    }
+  }
+</style>
