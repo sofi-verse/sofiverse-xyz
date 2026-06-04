@@ -1,11 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-
-const meta = [
-  { label: 'Role',   value: 'UX Designer' },
-  { label: 'Client', value: 'PerkOS'       },
-  { label: 'Year',   value: '2026'         },
-];
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 const bullets = [
   'Reviewed the UX of the platform\'s first versions.',
@@ -14,349 +8,54 @@ const bullets = [
   'Explored design directions and built a component system using Figma.',
   'Contributed to the architecture for managing agents and delivered a handoff-ready Figma prototype.',
 ];
-
-const images = [
-  '/img-swarm-02.jpg',
-  '/img-swarm-03.jpg',
-  '/img-swarm-04.jpg',
-  '/img-swarm-05.jpg',
-  '/img-swarm-06.jpg',
-];
 ---
 
-<BaseLayout title="Swarm" description="AI fleet orchestration platform by Perk OS.">
+<ProjectLayout
+  title="Swarm"
+  description="AI fleet orchestration platform by Perk OS. Real-time communication, task boards and agent management. Full desktop and mobile design."
+  tags={['product', 'design']}
+  meta={[
+    { label: 'Role',   value: 'UX Designer' },
+    { label: 'Client', value: 'PerkOS'       },
+    { label: 'Year',   value: '2026'         },
+  ]}
+  heroImage="/img-swarm-01.jpg"
+  images={[
+    '/img-swarm-02.jpg',
+    '/img-swarm-03.jpg',
+    '/img-swarm-04.jpg',
+    '/img-swarm-05.jpg',
+    '/img-swarm-06.jpg',
+  ]}
+  linkLabel="view prototype"
+  linkHref="https://www.figma.com/design/f34tHaMrYUjuOaedvSXMkT/Swarm-Design?node-id=40-2&t=cMCLuGjkqobOR4Lj-1"
+>
 
-  <!-- ── Header ── -->
-  <div class="container">
-    <a href="/projects" class="back-link">← go back to home</a>
-
-    <div class="project-header">
-      <div class="project-header__top">
-        <h1 class="project-title">Swarm</h1>
-        <div class="project-tags">
-          <span class="tag">product</span>
-          <span class="tag">design</span>
-        </div>
-      </div>
-
-      <p class="project-desc">
-        AI fleet orchestration platform by Perk OS. Real-time communication, task
-        boards and agent management. Full desktop and mobile design.
-      </p>
-
-      <dl class="project-meta">
-        {meta.map(({ label, value }) => (
-          <div class="project-meta__item">
-            <dt>{label}</dt>
-            <dd>{value}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  </div>
-
-  <!-- ── Hero image — full viewport width ── -->
-  <div class="fullbleed">
-    <img src="/img-swarm-01.jpg" alt="Swarm — overview" />
-  </div>
-
-  <!-- ── Case study text ── -->
-  <div class="container content-sections">
-
-    <section class="case-section">
-      <h2 class="case-section__title">The context</h2>
-      <p>Swarm is the agent orchestration layer of PerkOS — a platform for deploying, managing, and scaling AI agents across organisations. It gives teams a real-time view of what every agent is doing, lets them assign tasks, monitor progress, and course-correct without touching code. I joined at the prototype stage, working closely with the engineering lead to take the product from a rough internal tool to a shippable desktop and mobile experience.</p>
-    </section>
-
-    <section class="case-section">
-      <h2 class="case-section__title">The problem</h2>
-      <p>Swarm's early users came from web3 — comfortable with task boards and contributor management, but unfamiliar with AI orchestration. The core challenge wasn't building something new; it was making something genuinely complex feel like something they already knew. Every added layer of agent behaviour had the potential to confuse rather than empower, and the product needed to ship fast without sacrificing clarity.</p>
-    </section>
-
-    <section class="case-section">
-      <h2 class="case-section__title">What I did</h2>
-      <ul class="bullet-list">
-        {bullets.map(item => (
-          <li class="bullet-list__item">
-            <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="case-section">
-      <h2 class="case-section__title">The result</h2>
-      <p>The design reframes agents as team members and users as project managers. Once that mental model is established in the onboarding, everything else — dashboards, task queues, agent profiles — feels intuitive. The interface scales from a single agent to a full fleet without changing its logic. PerkOS shipped the first version internally and used the Figma prototype to close their next funding round.</p>
-    </section>
-
-  </div>
-
-  <!-- ── Project images ── -->
-  <div class="container project-images">
-    {images.map((src, i) => (
-      <img src={src} alt={`Swarm — screen ${i + 2}`} loading="lazy" class="project-image" />
-    ))}
-  </div>
-
-  <!-- ── View prototype ── -->
-  <div class="container">
-    <a
-      href="https://www.figma.com/design/f34tHaMrYUjuOaedvSXMkT/Swarm-Design?node-id=40-2&t=cMCLuGjkqobOR4Lj-1"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="prototype-link"
-    >
-      view prototype →
-    </a>
-  </div>
-
-  <!-- ── CTA ── -->
-  <section class="project-cta">
-    <div class="container">
-      <p class="project-cta__label">Working on something similar? →</p>
-      <a href="mailto:vcsofi.web3@gmail.com" class="project-cta__email">
-        vcsofi.web3@gmail.com
-      </a>
-    </div>
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Swarm is the agent orchestration layer of PerkOS — a platform for deploying, managing, and scaling AI agents across organisations. It gives teams a real-time view of what every agent is doing, lets them assign tasks, monitor progress, and course-correct without touching code. I joined at the prototype stage, working closely with the engineering lead to take the product from a rough internal tool to a shippable desktop and mobile experience.</p>
   </section>
 
-</BaseLayout>
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Swarm's early users came from web3 — comfortable with task boards and contributor management, but unfamiliar with AI orchestration. The core challenge wasn't building something new; it was making something genuinely complex feel like something they already knew. Every added layer of agent behaviour had the potential to confuse rather than empower, and the product needed to ship fast without sacrificing clarity.</p>
+  </section>
 
-<style>
-  /* ── Shared container ── */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-inline: var(--space-8);
-  }
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
 
-  /* ── Back link ── */
-  .back-link {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: var(--text-link);
-    color: var(--color-text-ghost);
-    text-decoration: none;
-    padding-top: var(--space-8);
-    margin-bottom: var(--space-8);
-    transition: color 0.2s;
-  }
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>The design reframes agents as team members and users as project managers. Once that mental model is established in onboarding, everything else — dashboards, task queues, agent profiles — feels intuitive. The interface scales from a single agent to a full fleet without changing its logic. PerkOS used the Figma prototype to ship the first internal version and to close their next funding round.</p>
+  </section>
 
-  .back-link:hover {
-    color: var(--color-text-primary);
-  }
-
-  /* ── Project header ── */
-  .project-header {
-    padding-bottom: var(--space-8);
-  }
-
-  .project-header__top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-  }
-
-  .project-title {
-    font-family: var(--font-sans);
-    font-size: var(--text-h3);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1;
-    color: var(--color-text-primary);
-  }
-
-  .project-tags {
-    display: flex;
-    gap: var(--space-2);
-    flex-shrink: 0;
-  }
-
-  .project-desc {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    color: var(--color-text-secondary);
-    line-height: 1.1;
-    max-width: 60ch;
-    margin-bottom: var(--space-6);
-  }
-
-  /* ── Metadata row ── */
-  .project-meta {
-    display: flex;
-    gap: var(--space-12);
-    margin: 0;
-  }
-
-  .project-meta__item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .project-meta__item dt {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-ghost);
-  }
-
-  .project-meta__item dd {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    color: var(--color-text-primary);
-    margin: 0;
-  }
-
-  /* ── Full-bleed image ── */
-  .fullbleed {
-    width: 100%;
-  }
-
-  .fullbleed img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* ── Case study text ── */
-  .content-sections {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-12);
-    padding-block: var(--space-16);
-  }
-
-  .case-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-    max-width: 68ch;
-  }
-
-  .case-section__title {
-    font-family: var(--font-sans);
-    font-size: var(--text-h4);
-    font-weight: 400;
-    line-height: 1;
-    color: var(--color-text-primary);
-  }
-
-  .case-section p {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    color: var(--color-text-secondary);
-    line-height: 1.1;
-    margin: 0;
-  }
-
-  /* ── Bullet list ── */
-  .bullet-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .bullet-list__item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-4);
-  }
-
-  .bullet-list__icon {
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
-
-  .bullet-list__item span {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    color: var(--color-text-secondary);
-    line-height: 1.1;
-  }
-
-  /* ── Project images ── */
-  .project-images {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding-block: var(--space-8);
-  }
-
-  .project-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* ── View prototype link ── */
-  .prototype-link {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: var(--text-link);
-    color: var(--color-text-secondary);
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 3px;
-    padding-block: var(--space-8);
-    transition: color 0.2s, text-decoration-color 0.2s;
-  }
-
-  .prototype-link:hover {
-    color: var(--color-text-primary);
-    text-decoration-color: var(--color-text-primary);
-  }
-
-  /* ── CTA ── */
-  .project-cta {
-    padding-block: var(--space-24);
-  }
-
-  .project-cta__label {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    color: var(--color-text-secondary);
-    margin: 0 0 var(--space-4);
-    line-height: 1.1;
-  }
-
-  .project-cta__email {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 5vw, var(--text-h1));
-    font-weight: 400;
-    color: var(--color-text-primary);
-    text-decoration: none;
-    line-height: 1;
-    display: inline-block;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-
-  .project-cta__email:hover {
-    border-bottom-color: var(--color-text-primary);
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
-    .project-header__top {
-      flex-direction: column;
-    }
-
-    .project-meta {
-      gap: var(--space-8);
-      flex-wrap: wrap;
-    }
-
-    .case-section {
-      max-width: none;
-    }
-  }
-</style>
+</ProjectLayout>

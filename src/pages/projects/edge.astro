@@ -1,0 +1,65 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Designed and maintained the visual identity system used across all Edge Network channels.',
+  'Produced weekly Discord recap graphics to keep the community engaged and aligned on direction and progress.',
+  'Created campaign assets for major announcements, partnerships, and product launches.',
+  'Developed content strategy and wrote copy across X/Twitter, LinkedIn, and Discord.',
+  'Designed branded merchandise including hoodies, shirts, and accessories.',
+  'Built content templates to help the core team produce consistent on-brand material independently.',
+];
+---
+
+<ProjectLayout
+  title="Edge Network"
+  description="Brand, content and design for a decentralized cloud infrastructure project. Visual identity, campaigns, merch and a weekly Discord recap."
+  tags={['content', 'design', 'comms']}
+  meta={[
+    { label: 'Role',   value: 'Brand & Content Designer' },
+    { label: 'Client', value: 'Edge Network'              },
+    { label: 'Year',   value: '2026'                      },
+  ]}
+  heroImage="/img-edge-01.jpg"
+  images={[
+    '/img-edge-02.jpg',
+    '/img-edge-03.jpg',
+    '/img-edge-04.jpg',
+    '/img-edge-05.jpg',
+    '/img-edge-06.jpg',
+    '/img-edge-07.jpg',
+    '/img-edge-08.jpg',
+    '/img-edge-09.jpg',
+  ]}
+  linkLabel="view twitter profile"
+  linkHref="https://x.com/edgenetwork"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Edge Network is a decentralized cloud infrastructure project built to challenge centralised providers — offering edge computing, storage, and CDN services powered by a distributed node network. I worked with their core team over an extended engagement to build and sustain their brand voice, content strategy, and visual identity across social channels, community platforms, and physical merchandise.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Technical infrastructure is hard to market. Edge Network had a genuinely strong product — decentralised, fast, cost-efficient — but their content wasn't translating that for a broader audience. Social posts felt generic, campaigns lacked a cohesive identity, and the community wasn't growing as fast as the product deserved. The team needed someone who could hold the visual and editorial thread across everything they shipped publicly.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>A more cohesive brand presence across all channels. The visual language became recognisable enough that community members could identify Edge Network content at a glance. The Discord recaps became a weekly community ritual, and campaign assets supported partnership announcements that reached tens of thousands of people. The content system I left behind let the team keep the momentum going independently.</p>
+  </section>
+
+</ProjectLayout>

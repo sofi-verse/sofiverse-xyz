@@ -273,5 +273,57 @@ img, video {
   font-family: var(--font-sans);
   font-size: var(--text-body);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.1;
+}
+
+/* ── Project page — case study sections ── */
+.case-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 68ch;
+}
+
+.case-section__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+.case-section p {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ── Bullet list ── */
+.bullet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.bullet-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.bullet-list__icon {
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.bullet-list__item span {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  line-height: 1.1;
 }
