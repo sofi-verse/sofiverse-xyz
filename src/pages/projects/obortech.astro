@@ -1,0 +1,63 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Designed social media graphics aligned with Obortech\'s brand across X/Twitter and LinkedIn.',
+  'Produced editorial content including blog posts, pitch deck slides, and documentation copy.',
+  'Created campaign visuals for product announcements, partnerships, and milestone activations.',
+  'Developed explainer graphics for complex supply chain and traceability concepts.',
+];
+---
+
+<ProjectLayout
+  title="Obortech"
+  description="Social media design, pitch deck, and editorial content for Obortech. Graphics, copy, and long-form writing across channels."
+  tags={['content', 'design']}
+  meta={[
+    { label: 'Role',   value: 'Content Designer' },
+    { label: 'Client', value: 'Obortech'         },
+    { label: 'Year',   value: '2024'             },
+  ]}
+  heroImage="/img-obortech-01.jpg"
+  images={[
+    '/img-obortech-02.jpg',
+    '/img-obortech-03.jpg',
+    '/img-obortech-04.jpg',
+    '/img-obortech-05.jpg',
+    '/img-obortech-06.jpg',
+    '/img-obortech-07.jpg',
+    '/img-obortech-08.jpg',
+    '/img-obortech-09.jpg',
+  ]}
+  linkLabel="view twitter profile"
+  linkHref="https://x.com/OBORTECHhub"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Obortech is a global supply chain traceability platform — combining blockchain technology to make logistics transparent, accountable, and responsible. Their flagship use case is food production traceability: tracking animals, shipments, and processes from farm to table. I worked with their team on a content and design engagement covering social media, editorial writing, and campaign materials across their most active growth period.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Obortech was operating at the intersection of enterprise logistics and web3 — a technically complex space that required communicating credibility to traditional industry partners while also staying relevant in crypto circles. The challenge was producing content that could hold both audiences: detailed enough to earn the trust of supply chain professionals, accessible enough not to lose a general web3 community. On top of that, the product roadmap moved fast, with integrations and milestones dropping regularly that all needed communication support.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>Consistent content output across Obortech's most active period — covering the launch of OBOT on Base Chain, the integration of 1,121 herders into the system, a World Dairy Food partnership, and the Community Validation Stage campaign. The editorial content helped position Obortech as a serious player in responsible food production, while the social graphics kept the community engaged and informed through every major milestone.</p>
+  </section>
+
+</ProjectLayout>
