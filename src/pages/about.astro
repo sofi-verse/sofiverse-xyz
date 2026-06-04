@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Me" description="About Sofia — Sofiverse, Product and Graphic Designer">
+
+  <section class="about">
+    <div class="container">
+
+      <a href="/" class="back-link">← go back to home</a>
+
+      <h1 class="about__title">About Me</h1>
+
+      <div class="about__grid">
+
+        <div class="about__image">
+          <img src="/img-sofiverse.jpg" alt="Sofia — Sofiverse" />
+        </div>
+
+        <div class="about__text">
+          <p>My name is Sofia (a.k.a. Sofiverse) and I'm a Product and Graphic Designer with a background in Architecture.</p>
+
+          <p>After leading multidisciplinary teams in housing projects and collaborating with international organizations like the UN and GIZ, I discovered web3 in 2022 (and fell in love). I transitioned into tech, where I combine my passion for design and systems thinking to create intuitive digital experiences.</p>
+
+          <p>Over the past four years, I've designed coordination platforms and dApps for open-source, funding, and regenerative projects that strengthen the onchain economy, impact, and reputation systems. I thrive in collaborative environments and am driven by the opportunity to build meaningful tools that improve how Web3 communities operate.</p>
+
+          <p>I work with technical teams who built something good but can't get the rest of the world to see why.</p>
+
+          <p>That gap, between what an engineering team knows and what an outsider sees, is what I close. Sometimes the answer is a product surface that finally clicks. Sometimes it's a landing page that says what it means. Sometimes it's a content system that helps a team explain itself without burning out. The problem is one; the solutions look different depending on where the breakage is.</p>
+
+          <p>If you're building something technical and you can feel that gap, you know where to find me.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .about {
+    padding-block: var(--space-8) var(--space-24);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: var(--space-8);
+  }
+
+  /* ── Back link ── */
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: var(--text-link);
+    color: var(--color-text-ghost);
+    text-decoration: none;
+    margin-bottom: var(--space-8);
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* ── Page title ── */
+  .about__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--color-text-primary);
+    line-height: 1;
+    margin-bottom: var(--space-12);
+  }
+
+  /* ── Two-column grid ── */
+  .about__grid {
+    display: grid;
+    grid-template-columns: 43fr 57fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  /* ── Image ── */
+  .about__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Text ── */
+  .about__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .about__text p {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    line-height: 1;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .about__title {
+      font-size: var(--text-h4);
+    }
+  }
+</style>
