@@ -1,0 +1,60 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Designed and maintained social media content adapted to BLOCKv\'s brand system across channels.',
+  'Produced long-form editorial content including blog posts, pitch decks, and documentation.',
+  'Created campaign graphics for product announcements, partnerships, and event activations.',
+];
+---
+
+<ProjectLayout
+  title="BLOCKv"
+  description="Social media design, pitch deck, and editorial content for BLOCKv. Graphics, copy, and long-form writing across channels."
+  tags={['content', 'design']}
+  meta={[
+    { label: 'Role',   value: 'Content Designer'      },
+    { label: 'Client', value: 'BLOCKv'                },
+    { label: 'Year',   value: '2025'                  },
+  ]}
+  heroImage="/img-blockv-01.jpg"
+  images={[
+    '/img-blockv-02.jpg',
+    '/img-blockv-03.jpg',
+    '/img-blockv-04.jpg',
+    '/img-blockv-05.jpg',
+    '/img-blockv-06.jpg',
+    '/img-blockv-07.jpg',
+  ]}
+  linkLabel="view twitter profile"
+  linkHref="https://x.com/DualOrg"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>BLOCKv is the infrastructure for the programmable economy — a layer protocol for issuing, syncing, and distributing interoperable digital assets at enterprise scale. I worked with their team on a sustained content and design engagement to support product launches, grow their social presence, and help a technically sophisticated product communicate more clearly with a wider audience.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>BLOCKv had built something with real depth — loyalty systems, supply chain provenance, decentralised asset infrastructure — but the content strategy wasn't keeping pace. Social posts were inconsistent in quality and voice, long-form content wasn't being produced at the cadence the product deserved, and individual campaigns felt disconnected from the broader story. My job was to bring that coherence across everything they published.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>Maintained across 10,000+ Twitter community members by producing content that translated BLOCKv's technical depth into a language traditional markets could understand. Campaigns reached new audiences across finance, retail, and logistics verticals, and the editorial content helped establish BLOCKv as a thought leader in the token economy space.</p>
+  </section>
+
+</ProjectLayout>
