@@ -1,0 +1,61 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const bullets = [
+  'Researched reference websites that function as community hubs to identify what makes them work.',
+  'Designed the full layout for the website, from hero to sections and call-to-action.',
+  'Sourced visual and illustration references that felt fun and culturally grounded in the Frutero brand.',
+  'Published a full design system including typography, colours, and reusable components.',
+  'Built the prototype in Figma, ready for development handoff.',
+];
+---
+
+<ProjectLayout
+  title="Frutero Club"
+  description="Landing page design for a Mexican builder community. Visual and narrative direction built to channel local builder energy and grow the network."
+  tags={['design']}
+  meta={[
+    { label: 'Role',   value: 'Web Designer'  },
+    { label: 'Client', value: 'Frutero Club'  },
+    { label: 'Year',   value: '2025'          },
+  ]}
+  heroImage="/img-frutero-01.jpg"
+  images={[
+    '/img-frutero-02.jpg',
+    '/img-frutero-03.jpg',
+    '/img-frutero-04.jpg',
+    '/img-frutero-05.jpg',
+    '/img-frutero-06.jpg',
+  ]}
+  linkLabel="view site"
+  linkHref="https://frutero.club/"
+>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The context</h2>
+    <p>Frutero Club is the Mexican builder community at the intersection of AI and crypto — a network of hackers, founders, and creators across LATAM. It combines mentorship programmes, hackathons, and a physical hub in Chopo, Mexico City. Frutero is always open: showing up, asking for help, and building together. Backed by Base, Scroll, Avalanche, and other leading web3 protocols.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The problem</h2>
+    <p>Despite being a reference point in the Mexican and LATAM builder community, Frutero didn't have a website proportional to its trajectory or the goals it had set for 2025. The community was gaining momentum fast — events, partnerships, new cohorts — but there was no central place that reflected that energy or made it easy for builders to understand what Frutero was and why they should join.</p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">What I did</h2>
+    <ul class="bullet-list">
+      {bullets.map(item => (
+        <li class="bullet-list__item">
+          <img src="/icon-bullet-list.svg" alt="" aria-hidden="true" class="bullet-list__icon" width="8" height="8" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2 class="case-section__title">The result</h2>
+    <p>Gave a new identity to one of LATAM's most active builder communities. Since the launch, Frutero has been running events, onboarding new cohorts, and growing its presence across the region. The design gave the brand a visual and narrative space it needed to keep scaling — playful enough to feel local, structured enough to earn the trust of serious builders and partners.</p>
+  </section>
+
+</ProjectLayout>
