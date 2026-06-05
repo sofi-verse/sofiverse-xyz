@@ -16,7 +16,7 @@ interface Props {
 const { title, description, tags, meta, heroImage, images, linkLabel, linkHref, imageColumns = 1 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} preloadImage={heroImage}>
 
   <!-- ── Header ── -->
   <div class="container">

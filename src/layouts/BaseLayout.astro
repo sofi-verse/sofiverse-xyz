@@ -5,8 +5,9 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  preloadImage?: string;
 }
-const { title, description = 'sofiverse — design & strategy' } = Astro.props;
+const { title, description = 'sofiverse — design & strategy', preloadImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -33,6 +34,8 @@ const { title, description = 'sofiverse — design & strategy' } = Astro.props;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} />}
   </head>
   <body>
     <Nav />
