@@ -5,29 +5,28 @@ const services = [
   {
     icon: '/icon-embedded.svg',
     title: 'Embedded',
-    body: 'For teams that need a design brain in the room for a quarter. Usually around a launch, rebrand, product overhaul or funding round. I design the surfaces and help your team get sharper at explaining what they\'re building. Best for early-stage teams without a design hire yet.',
+    body: 'For teams that need a design brain in the room for a quarter (usually around a launch, rebrand, product overhaul, or fundraise). I design the product surfaces, build the brand system, and help your team get sharper at how their work shows up in the world. Best for early-stage teams without a design hire yet.',
   },
   {
     icon: '/icon-project-based.svg',
-    title: 'Project based',
-    body: 'For specific scopes with clear edges: landing pages, messaging frameworks, content systems, pitch decks that don\'t put investors to sleep, case studies, documentation rewrites.',
-    note: 'Defined timeline, defined deliverables.',
+    title: 'Project-based',
+    body: 'For specific scopes with clear edges: product redesigns and new features, brand systems, landing pages, pitch decks that don\'t put investors to sleep, design system audits, mobile versions. Defined timeline, defined deliverables.',
   },
   {
     icon: '/icon-one-off.svg',
     title: 'One-off',
-    body: 'For the smaller stuff: content audits, copy reviews, half-day workshops with your team, or the occasional "please rewrite this before tomorrow\'s pitch".',
+    body: 'For the smaller stuff: design audits, brand explorations, half-day workshops with your team, or the occasional "please make this look good before tomorrow\'s pitch".',
   },
 ];
 
 const faqs = [
   {
     question: "Who I'm usually a fit for",
-    answer: "Technical teams in web3, security, or dev tools who know they need help making their work legible to people outside the repo. Most of my clients are founders, marketing leads, or design leads who are tired of being the bottleneck for everything that needs words.",
+    answer: "Technical teams in web3, dev tools, or open source who know they need design to keep up with what they're shipping. Most of my clients are founders, product leads, or marketing leads at engineering-heavy teams that don't yet have a designer (or have one who's drowning).",
   },
   {
     question: "Who I'm not a fit for",
-    answer: 'Pure visual brand work without context. Logos in a vacuum. "Make this pretty" without "make this make sense". I do brand work, but always with words and strategy attached.',
+    answer: 'Pure aesthetic work without strategic context. Logos in a vacuum. "Make this pretty" without "make this make sense". I design things, but always with the team and the user in mind, not just the visual outcome.',
   },
   {
     question: 'How it starts',
@@ -58,7 +57,7 @@ const faqs = [
 
       <!-- ── Service cards ── -->
       <div class="services">
-        {services.map(({ icon, title, body, note }) => (
+        {services.map(({ icon, title, body, note = undefined }) => (
           <div class="service-card">
             <img src={icon} alt="" class="service-card__icon" aria-hidden="true" width="32" height="32" />
             <h2 class="service-card__title">{title}</h2>
