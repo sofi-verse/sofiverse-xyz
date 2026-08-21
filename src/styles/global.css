@@ -15,9 +15,10 @@ html {
 
 body {
   background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -80,33 +81,33 @@ img, video {
 }
 
 .type-body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-body);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.1;
   color: var(--color-text-secondary);
 }
 
 .type-tag {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-tag);
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--color-text-ghost);
 }
 
 .type-link {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-link);
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-text-primary);
 }
 
 .type-small {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-small);
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-text-primary);
@@ -118,9 +119,9 @@ img, video {
   align-items: center;
   justify-content: center;
   padding: var(--space-2) var(--space-6);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-body);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
   cursor: pointer;
   background: transparent;
@@ -140,9 +141,9 @@ img, video {
   display: inline-flex;
   align-items: center;
   padding: var(--space-1) var(--space-3);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-text-ghost);
   background: var(--color-bg-secondary);
   border-radius: var(--radius-sm);
@@ -198,8 +199,9 @@ img, video {
 }
 
 .card-large__description {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 300;
   color: var(--color-text-secondary);
   line-height: 1.6;
   flex: 1;
@@ -267,8 +269,9 @@ img, video {
 }
 
 .card-small__description {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 300;
   color: var(--color-text-secondary);
   line-height: 1.1;
 }
@@ -290,8 +293,9 @@ img, video {
 }
 
 .case-section p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 300;
   color: var(--color-text-secondary);
   line-height: 1.1;
   margin: 0;
@@ -319,8 +323,9 @@ img, video {
 }
 
 .bullet-list__item span {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 300;
   color: var(--color-text-secondary);
   line-height: 1.1;
 }
